@@ -9,6 +9,9 @@
   "scripts": {
     "dev": "node scripts/with-app-env.mjs vite dev --host 0.0.0.0 --port 8080",
     "build": "node scripts/with-app-env.mjs vite build && npm run db:migrate",
+    "build:vps": "NITRO_PRESET=node-server npm run build",
+    "start": "node .output/server/index.mjs",
+    "test:battle": "node --experimental-strip-types --test src/game/battle/engine.test.ts",
     "db:migrate": "node scripts/migrate.mjs",
     "build:dev": "node scripts/with-app-env.mjs vite build --mode development",
     "preview": "node scripts/with-app-env.mjs vite preview",
