@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { WEAPON_ORDER, type WeaponId } from "@/lib/weapons";
+import { STARTER_WEAPONS, WEAPON_ORDER, type WeaponId } from "@/lib/weapons";
 
 const SAVE_VERSION = 1;
 const KEY = "vostrikov-profile-v1";
@@ -24,8 +24,18 @@ const defaults: Profile = {
   coins: 120,
   xp: 0,
   extraHearts: 0,
-  unlocked: ["sword"],
-  levels: { sword: 1, pistol: 1, cannon: 1, rocket: 1, drones: 1 },
+  unlocked: [...STARTER_WEAPONS],
+  levels: {
+    sword: 1,
+    pistol: 1,
+    cannon: 1,
+    rocket: 1,
+    drones: 1,
+    smg: 1,
+    shotgun: 1,
+    sniper: 1,
+    plasma: 1,
+  },
   runnerBest: 0,
   runnerDistance: 0,
   battleBest: 0,
@@ -35,14 +45,20 @@ const defaults: Profile = {
 function load(): Profile {
   try {
     const raw = localStorage.getItem(KEY);
-    if (!raw) return { ...defaults, levels: { ...defaults.levels }, unlocked: [...defaults.unlocked] };
+    if (!raw)
+      return { ...defaults, levels: { ...defaults.levels }, unlocked: [...defaults.unlocked] };
     const parsed = JSON.parse(raw) as Partial<Profile>;
     return {
       ...defaults,
       ...parsed,
       version: SAVE_VERSION,
       levels: { ...defaults.levels, ...parsed.levels },
-      unlocked: parsed.unlocked?.length ? parsed.unlocked : ["sword"],
+      unlocked: [
+        ...new Set([
+          ...STARTER_WEAPONS,
+          ...(parsed.unlocked ?? []).filter((id) => WEAPON_ORDER.includes(id)),
+        ]),
+      ],
     };
   } catch {
     return { ...defaults, levels: { ...defaults.levels }, unlocked: [...defaults.unlocked] };
