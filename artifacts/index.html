@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vostrikov Game — Главный Герой</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Hero Section -->
+  <header class="hero" id="home">
+    <img src="img/hero.jpg" alt="Главный Герой" class="hero-bg">
+    <div class="hero-overlay">
+      <h1 class="logo">VOSTRIKOV GAME</h1>
+      <p class="tagline">Главный Герой возвращается</p>
+      <a href="#games" class="btn btn-primary">Играть</a>
+    </div>
+  </header>
+
+  <!-- Rules Section -->
+  <section class="rules" id="rules">
+    <img src="img/armwrestle.jpg" alt="Правила" class="rules-bg">
+    <div class="rules-overlay">
+      <h2>Правила игры</h2>
+      <div class="rules-content">
+        <div class="rule-card">
+          <h3>🏃 Раннер</h3>
+          <ul>
+            <li>Прыгай через препятствия (стрелка вверх / пробел / тап)</li>
+            <li>Собирай монеты и предметы</li>
+            <li>Выполняй лёгкие задания как в Among Us (кликай по объектам)</li>
+            <li>Не врезайся в врагов и пропасти</li>
+            <li>Цель: набрать максимум очков и пройти как можно дальше</li>
+          </ul>
+        </div>
+        <div class="rule-card">
+          <h3>⚔️ Сражение</h3>
+          <ul>
+            <li>Управляй героем WASD / стрелки</li>
+            <li>Стреляй из оружия (ЛКМ / пробел)</li>
+            <li>Переключай оружие: 1 — меч, 2 — пушка, 3 — дроны</li>
+            <li>Уничтожай танки, дроны и врагов</li>
+            <li>Собирай бонусы, не дай себя убить</li>
+            <li>Выживи как можно дольше и набери рекорд</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Games Section -->
+  <section class="games" id="games">
+    <h2>Выбери игру</h2>
+    <div class="games-grid">
+      <a href="runner.html" class="game-card runner-card">
+        <div class="game-preview">
+          <img src="img/character.png" alt="Раннер">
+        </div>
+        <h3>Раннер</h3>
+        <p>Прыгай, собирай, выполняй задания. Как Марио + Among Us.</p>
+        <span class="play-btn">Играть →</span>
+      </a>
+      <a href="battle.html" class="game-card battle-card">
+        <div class="game-preview">
+          <img src="img/character.png" alt="Сражение">
+        </div>
+        <h3>Сражение</h3>
+        <p>Танки, оружие, дроны. Уничтожай врагов и выживай.</p>
+        <span class="play-btn">Играть →</span>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Vostrikov Game · Готово к переносу на VPS</p>
+    <p class="tech">HTML + CSS + Canvas JS · Без внешних зависимостей игр</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

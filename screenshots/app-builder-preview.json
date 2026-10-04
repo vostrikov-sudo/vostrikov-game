@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Vostrikov Game",
+      "hasCanvas": false,
+      "bodyTextLen": 694,
+      "bodyTextHash": "9d30758c6e688d9715c7c96fedd4579aa2d53f0d67185cd400ff28846e86374e",
+      "bodyTextPrefix": "VOSTRIKOV Главная Профиль Раннер Сражение ШКОЛА №124 · ЕКАТЕРИНБ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Vostrikov Game",
+      "hasCanvas": false,
+      "bodyTextLen": 694,
+      "bodyTextHash": "9d30758c6e688d9715c7c96fedd4579aa2d53f0d67185cd400ff28846e86374e",
+      "bodyTextPrefix": "VOSTRIKOV Главная Профиль Раннер Сражение ШКОЛА №124 · ЕКАТЕРИНБ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

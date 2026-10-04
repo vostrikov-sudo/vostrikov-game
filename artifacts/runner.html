@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Раннер — Vostrikov Game</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    .game-wrap { position: relative; flex: 1; display: flex; align-items: center; justify-content: center; background: #0a0a12; }
+    #gameCanvas { border: 3px solid #1a1a28; border-radius: 4px; }
+  </style>
+</head>
+<body class="game-page">
+  <div class="game-header">
+    <a href="index.html">← Назад</a>
+    <div class="score-board">
+      <div>Очки: <span id="score">0</span></div>
+      <div>Дистанция: <span id="distance">0</span>м</div>
+      <div>Жизни: <span id="lives">3</span></div>
+    </div>
+  </div>
+
+  <div class="game-wrap">
+    <canvas id="gameCanvas" width="900" height="500"></canvas>
+    <div id="startOverlay" class="overlay-msg">
+      <h2>Раннер</h2>
+      <p>Прыгай (↑ / Пробел / Тап), собирай монеты,<br>выполняй задания (кликай по зелёным объектам)</p>
+      <button class="btn-restart" id="startBtn">Начать</button>
+    </div>
+    <div id="gameOverOverlay" class="overlay-msg hidden">
+      <h2>Игра окончена</h2>
+      <p id="finalScore"></p>
+      <button class="btn-restart" id="restartBtn">Ещё раз</button>
+    </div>
+  </div>
+
+  <div class="game-controls">
+    Управление: ↑ / Пробел / Тап — прыжок · Клик по зелёным объектам — задание
+  </div>
+
+  <script src="js/runner.js"></script>
+</body>
+</html>
