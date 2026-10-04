@@ -1,7 +1,19 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { BattleGame } from "@/game/battle/BattleGame";
 
-export const Route = createFileRoute("/battle")({ component: Page });
+export const Route = createFileRoute("/battle")({
+  component: Page,
+  head: () => ({
+    links: import.meta.env.DEV
+      ? [
+          {
+            rel: "stylesheet",
+            href: `${import.meta.env.BASE_URL}src/game/battle/battle.css?direct`,
+          },
+        ]
+      : [],
+  }),
+});
 
 function Page() {
   return (

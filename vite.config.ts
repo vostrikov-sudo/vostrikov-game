@@ -166,7 +166,9 @@ export default defineConfig(({ command, isPreview }) => ({
     // PWA head + ?install=1 tutorial page; runs before Start/Nitro.
     grokPwaPlugin(),
     tailwindcss(),
-    tanstackStart(),
+    // The dev collector follows Tailwind watch dependencies as CSS imports,
+    // including unrelated archived/PWA styles. Routes link their dev CSS directly.
+    tanstackStart({ dev: { ssrStyles: { enabled: false } } }),
     ...(command === "build" || isPreview
       ? [
           nitro({
